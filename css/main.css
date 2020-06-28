@@ -139,7 +139,7 @@ li{
 
 .nav-link:hover,
 .nav-link:focus{
-	background: linear-gradient(to top,#c88ea9,#339ac1);
+	background: linear-gradient(to top,#8e97c8,#339ac1);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
