@@ -13,7 +13,7 @@
 - CEERI OG
 
 ## Media 
-- Doordarshan
+- [Doordarshan](https://youtu.be/Fpv0ImCxmyg)
 - Newspapers
 - [ROS News](https://discourse.ros.org/t/news-for-the-week-of-9-7-2020/16368)
 - [ROS2 News](https://discourse.ros.org/t/ros-news-for-the-week-of-7-27-2020/15698)
