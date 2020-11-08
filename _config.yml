@@ -1,7 +1,7 @@
 # Site settings
 title: Pranay Mathur
 description: Budding Roboticist, Aviation Enthusiast, Avid Reader
-baseurl: "/home"
+baseurl: ""
 url: "https://matnay.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
