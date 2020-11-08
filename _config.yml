@@ -6,7 +6,7 @@ url: "https://matnay.github.io" # the base hostname & protocol for your site e.g
 
 # User settings
 username: Pranay Mathur
-user_description: Robotics Aviation Open-source Reading Open-source   
+user_description: Robotics, Aviation, Open-source, Reading, Open-source   
 user_title: Undergrad
 email: matnay17@gmail.com
 twitter_username: matnay17
@@ -15,6 +15,6 @@ gplus_username:  matnay17
 
 # Google-analytics
 google-analytics:
-  id: ""
+  id: "matnay17@gmail.com"
 
 exclude: ['package.json', 'src' , 'node_modules']
