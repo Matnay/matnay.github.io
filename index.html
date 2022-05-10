@@ -1,3 +1,943 @@
----
-layout: default
----
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <title>Pranay Mathur</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta name="author" content="Pranay Mathur">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
+    <link rel="icon" type="image/jpg" href="images/Pranay.png">
+</head>
+
+<body class="bg_colour">
+    <table border=0 class="bg_colour"
+        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr style="padding:0px">
+                <td style="padding:0px">
+
+                    <!-- Name tab -->
+                    <table border=0 class="bg_colour"
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+
+
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:20%;max-width:20%">
+                                    <a href="images/Pranay.png"><img style="width:100%;max-width:100%"
+                                            alt="profile photo" src="images/Pranay.png" class="img-circle"></a>
+                                </td>
+                                <td style="padding:2.5%;width:60%;vertical-align:middle">
+                                    <p style="text-align:center">
+                                        <name>Pranay Mathur</name>
+                                    </p>
+                                    <p style="text-align:center">
+                                        <a href="https://scholar.google.com/citations?hl=en&user=c-pcTqMAAAAJ">Google
+                                            Scholar</a>
+                                        &nbsp|&nbsp
+                                        <a href="#news" onclick=Expand("news")>News</a>
+                                        &nbsp|&nbsp
+                                        <a href="#experience" onclick=Expand("experience")>Experience</a>
+                                        &nbsp|&nbsp
+                                        <a href="#publication" onclick=Expand("publication")>Publication</a>
+                                        &nbsp|&nbsp
+                                        <a href="#projects" onclick=Expand("projects")>Projects</a>
+                                        &nbsp|&nbsp
+                                        <a href="#media" onclick=Expand("media")>Awards</a>
+                                    </p>
+                                </td>
+                                <td style="padding:2.5%;width:10%;max-width:10%">
+                                    <!-- <a href="images/RishabKhinchaProfilePic.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/RishabKhinchaProfilePic.png" class="hoverZoomLink"></a> -->
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                    <td colspan="2">
+                        <p style="text-align:center">
+                            &nbsp|&nbsp
+                            <a href="#news" onclick=Expand("news")>News</a>
+                            &nbsp|&nbsp
+                            <a href="#experience" onclick=Expand("experience")>Experience</a>
+                            &nbsp|&nbsp
+                            <a href="#blog" onclick=Expand("blog")>blog</a>
+                            &nbsp|&nbsp
+                            <a href="#projects" onclick=Expand("projects")>Projects</a>
+                            &nbsp|&nbsp
+                            <a href="#contact" onclick=Expand("contact")>Contact</a>
+                            &nbsp|&nbsp
+                        </p>
+                    </td>
+                    </tr> -->
+                        </tbody>
+                    </table>
+
+
+                    <!-- About section, quick links -->
+
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                                    <p>I am Pranay Mathur, an incoming M.S Robotics student at Georgia Tech (Fall 2022
+                                        onwards) and my research interests lie in robot perception and learning. I
+                                        completed my undergraduate degree at
+                                        <a href="https://bits-pilani.ac.in" target="_blank">BITS, Pilani</a>
+                                        where I majored in Electronics and Instrumentation Engineering. My work lies at
+                                        the intersection of Computer Vision, Deep-Learning and Human-Robot
+                                        Collaboration.
+                                    </p>
+                                    <p>
+                                        These days, I am working in <a href="https://addverb.com/"
+                                            target="_blank">Addverb Technologies</a> as a perception engineer on
+                                        vision-based navigation and localization techniques.
+                                        In the past, I interned at <a href="https://www.kpit.com/"
+                                            target="_blank">Technoyantra</a> where I developed a localization algorithm
+                                        using EKF based fusion of pose estimates from fiducial tags and LIDAR
+                                        based SLAM.
+                                        In the preceeding summer, I interned at <a href="https://www.kpit.com/"
+                                            target="_blank">KPIT</a> where I worked on deep-learning based multi-modal
+                                        sensor fusion for object detection in adverse weather conditions. I completed my
+                                        undergraduate thesis
+                                        at the <a href="https://www.autonomousrobotslab.com/" target="_blank">Autonomous
+                                            Robots Lab</a> under the guidance of <a href="http://www.kostasalexis.com/"
+                                            target="_blank">Prof. Kostas Alexis</a>, where I developed a generalizable
+                                        Resource-Aware algorithm for deployment of Visual Inertial Odometry algorithms
+                                        on aerial vehicles with computationally constrained onboard systems.
+                                    </p>
+                                    <p>
+                                        I am an avid aviation enthusiast and love building and flying quadcopters. Apart
+                                        from aviation, I am a voracious reader and love the work of Rudyard Kipling,
+                                        Roald Dahl and Jeffrey Archer. I love playing football and running marathons so
+                                        feel free to reach out if you need a running partner!
+                                    </p>
+                                    <p>
+                                        Feel free to check out my
+                                        <a href="data/CV_PranayMathur.pdf" target="_blank">CV</a>
+                                        and drop me an
+                                        <a href="mailto:matnay17@gmail.com" target="_blank">e-mail</a>
+                                        if you want to chat with me!
+                                    </p>
+                                    <p style="text-align:center">
+                                        &nbsp~&nbsp
+                                        <a href="mailto:matnay17@gmail.com" target="_blank">Email</a> &nbsp|&nbsp
+                                        <a href="data/CV_PranayMathur.pdf" target="_blank">CV</a> &nbsp|&nbsp
+                                        <a href="https://github.com/Matnay" target="_blank">Github</a> &nbsp|&nbsp
+                                        <a href="https://www.linkedin.com/in/pranay-mathur1998/"
+                                            target="_blank">LinkedIn</a>
+                                        <!-- <a href="https://twitter.com/AmoghDabholkar" target="_blank">Twitter</a> -->
+                                        &nbsp~&nbsp
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="soft">
+                    <!-- News -->
+
+                    <!-- <br> -->
+                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
+                        class="collapsible" data-toggle="collapse" data-target="#content-news" id="news">
+                        <heading>News</heading>
+                    </button>
+                    <div id="content-news" class="collapse in">
+
+                        <table border=0 class="bg_colour"
+                            style="padding:10px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[Aug'22] &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Incoming MS in Robotics (ECE) at Georgia Tech
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[Aug'20] &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Started working with Addverb Technologies in the perception division
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[July'21] &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Graduated From BITS Pilani
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[Jan'21 - Jul'21] &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Interned at Technoyantra along with Final Semester
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[Jul'20 - Jan'21] &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Worked with Prof. Kostas Alexis at Autonomous Robots Lab as part of
+                                        Undergraduate Thesis
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[May'20 - Jun'20] &nbsp &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Interned at KPIT on Deep-Learning based multi-modal sensor fusion
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[May'19 - Jul'19] &nbsp &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Worked at CSIR-CEERI Pilani as a Research Intern
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="color:blue; display:inline">[Aug'17] &nbsp &nbsp</p>
+                                    </td>
+                                    <td>
+                                        Started undergraduate degree at BITS Pilani
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="soft">
+
+
+                    <!-- Experience -->
+
+                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
+                        class="collapsible" data-toggle="collapse" data-target="#content-experience" id="experience">
+                        <heading>Experience</heading>
+                    </button>
+                    <div id="content-experience" class="collapse in">
+
+                        <table border=0 class="bg_colour"
+                            style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                            <tbody>
+
+
+                                <tr>
+                                    <td style="padding:10px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/Addverb.jpeg' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <papertitle style="color:gray"><big> Graduate Engineer Trainee </big>
+                                        </papertitle>
+                                        <papertitle><big> | Addverb Technologies</big></papertitle>
+                                        <br>
+                                        August '21 - present
+                                        <br>
+                                        <br>
+                                        <p>
+                                        <ul>
+                                            <li>Working on appearance-based Navigation of ground-based robots using
+                                                semantic-scene understanding</li>
+                                            <li>Integrated autonomous mobile-robots with 5G cloud-control based
+                                                capabilities</li>
+                                            <li>Deployed learning-based vision-front end pipeline for augmenting LiDAR
+                                                based SLAM in mobile robots</li>
+                                        </ul>
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td style="padding:10px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/ty.jpg' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <papertitle style="color:gray"><big> Intern</big>
+                                        </papertitle>
+                                        <papertitle><big> | Technoyantra</big></papertitle>
+                                        <br>
+                                        January '21 - August '21
+                                        <br>
+                                        <br>
+                                        <p>
+                                        <ul>
+                                            <li>Developed a localization algorithm using EKF based fusion of pose
+                                                estimates from fiducial tags and LIDAR based SLAM <a
+                                                    href="https://github.com/TechnoYantra" target="_blank">(GitHub)</a>
+                                            </li>
+                                            <li>Implemented pipelines in ROS2 for Point Cloud segmentation, statistical
+                                                outlier removal and voxel filtering</li>
+
+                                        </ul>
+
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <td style="padding:10px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/ARL.png' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <papertitle style="color:gray"><big> Undergraduate Researcher</big>
+                                        </papertitle>
+                                        <papertitle><big> | Autonomous Robots Lab</big></papertitle>
+                                        <br>
+                                        July '20 - January '21
+                                        <br>
+                                        <br>
+                                        <p>
+                                        <ul>
+                                            <li>Developed a generalizable Resource-Aware algorithm for deployment of
+                                                Visual Inertial Odometry algorithms
+                                                on aerial vehicles with computationally constrained onboard systems
+                                                under the guidance of
+                                                <b>Prof. Kostas Alexis</b> <a href="https://youtu.be/H5gIe418zwc"
+                                                    target="_blank">(Video)</a> <a
+                                                    href="https://arxiv.org/pdf/2106.00289.pdf"
+                                                    target="_blank">(Paper)</a>
+                                            </li>
+                                            <li>Contributed to Intel ISL Open3D and released two packages incorporated
+                                                into ROS-perception.</li>
+                                            <li>Presented the packages as a Lightning Talk at ROS-World 2020. <a
+                                                    href="https://github.com/ros-perception/perception_open3d"
+                                                    target="_blank">(GitHub)</a>
+                                                <a href="https://vimeo.com/480560723" target="_blank">(Video)</a>
+                                            </li>
+                                        </ul>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:10px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/KPIT.png' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <papertitle style="color:gray"><big> Technical Intern</big>
+                                        </papertitle>
+                                        <papertitle><big> | KPIT</big></papertitle>
+                                        <br>
+                                        May '20 - July '20
+                                        <br>
+                                        <br>
+                                        <p>
+                                        <ul>
+                                            <li>Worked on Object Detection based on multi-modal sensor fusion using 3D
+                                                LIDAR, monocular camera and
+                                                a RADAR <a href="https://arxiv.org/pdf/2106.00289.pdf"
+                                                    target="_blank">(Paper)</a></li>
+                                            <li>Developed a novel algorithm for detection of vehicles and pedestrians
+                                                implemented using tensorflow
+                                                and ROS <a
+                                                    href="https://github.com/Matnay/KPIT_Fusion_Object_Detection_DL"
+                                                    target="_blank">(GitHub)</a></li>
+
+                                        </ul>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:10px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/ceeri.png' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <papertitle style="color:gray"><big> Research Intern</big> </papertitle>
+                                        <papertitle><big> | CSIR-Central Electronics Engineering Research
+                                                Institute</big></papertitle>
+                                        <br>
+                                        May '19 - July '19
+                                        <br>
+                                        <br>
+                                        <p>
+                                        <ul>
+                                            <li>Implemented RTAB-Map SLAM for Autonomous Navigation of Quadcopters using
+                                                PX4 and ROS in visually-degraded GPS denied environments using an RGBD
+                                                camera</li>
+                                            <li>Implemented multi-modal sensor fusion and image noise-removal through
+                                                classical image processing pipelines under the guidance of Dr. S. A.
+                                                Akbar, Chief Scientist CEERI Pilani, India</li>
+                                        </ul>
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td style="padding:10px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/BITS.png' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <papertitle style="color:gray"><big> Research Assistant </big> </papertitle>
+                                        <papertitle><big> | BITS Pilani</big></papertitle>
+                                        <br>
+                                        Aug '19 - Dec '19
+                                        <br>
+                                        <br>
+                                        <p>
+                                        <ul>
+                                            <li>Worked with <a href="https://www.bits-pilani.ac.in/goa/neena/profile"
+                                                    target="_blank">Prof Neena Goveas</a> in the Department of Computer
+                                                Science at BITS Pilani. We developed a supervised deep-learning approach
+                                                for detection of landing sites and using EKF to land on them. The work
+                                                was published in IEEE IRIA 2021 and received the <a
+                                                    href="images/Best Paper Award-17.png" target="_blank">Best Paper
+                                                    Award</a>.
+                                            </li>
+                                            <li>Worked with <a href="https://www.bits-pilani.ac.in/goa/veeky/profile"
+                                                    target="_blank">Prof Veeky Baths</a> heading the Cognitive
+                                                Neuroscience Lab at BITS Pilani. We developed a SVM based EEG
+                                                classification approach to control a quadcopter for 3D reconstruction
+                                                and exploration. Our work was published in IEEE SMC 2020.
+                                            </li>
+                                        </ul>
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr class="soft">
+
+
+                    <!-- blog-->
+
+                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
+                        class="collapsible" data-toggle="collapse" data-target="#content-publication" id="publication">
+                        <heading>Publications</heading>
+                    </button>
+                    <div id="content-publication" class="collapse in">
+
+                        <table border=0 class="bg_colour"
+                            style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                            <tbody>
+                                <tr>
+                                    <td style="padding:1px;width:25%;vertical-align:top">
+                                        <div class="one">
+                                            <img src='images/network.jpg' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <a href="https://arxiv.org/abs/2203.15272">
+                                            <papertitle><big>Sparse Image based Navigation Architecture to Mitigate the
+                                                    need of precise Localization in Mobile Robots</big></papertitle>
+                                        </a>
+                                        <br>
+                                        <strong>Pranay Mathur</strong>,
+                                        <a href="">Rajesh Kumar</a>,
+                                        <a href="">Sarthak Upadhyay</a>,
+                                        <br>
+                                        <em>arXiv</em> 2022
+                                        <br>
+                                        <!-- <p>Cite as - M. Srinivasan, A. Dabholkar, S. Coogan and P. A. Vela,
+                                            "Synthesis of Control Barrier Functions Using a Supervised
+                                            Machine Learning Approach" 2020 IEEE/RSJ International
+                                            Conference on Intelligent Robots and Systems (IROS), 2020, pp.
+                                            7139-7145, doi: 10.1109/IROS45743.2020.9341190.</p>
+                                        <br>
+                                        <p>
+                                            <li> Control
+                                                barrier functions (CFB) are mathematical constructs used
+                                                to provide formal safety guarantees.</li>
+                                            <li> This work presented a supervised machine
+                                                learning approach for synthesis of control barrier
+                                                functions, using support vector machine (SVM).</li>
+                                            <li> In this paper CFB is
+                                                used to construct safe trajectory for robot to navigate and
+                                                avoid obstacles</li>
+                                            <li> Experiments were conducted with ROS
+                                                and Simple Two-Dimensional Robot (STDR) Simulator.
+                                                Both offline and online scenarios were tested, in offline
+                                                scenario all obstacles were known, online scenario robot
+                                                starts with zero knowledge of world and synthetic LIDAR
+                                                sensor were used to map obstacles.</li>
+                                            <li> In simulated scenario
+                                                with five obstacles Correlation Coefficients and Frechet
+                                                distances against ground truth were in average 0.98/0.05
+                                                for offline SVM and 0.92/0.09 for online SVM</li>
+                                            <li> The solution was also implemented succesfully for
+                                                slightly non-convex obstacles as well</li>
+                                            <li> Check out <a href="https://youtu.be/4EesPjQq0JU?t=2170"
+                                                    target="_blank">this seminar</a>
+                                                by Dr. Vela for more details about this work.</li>
+                                        </p> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;width:25%;vertical-align:top">
+                                        <div class="one">
+                                            <img src='images/crvios.gif' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <a href="https://arxiv.org/pdf/2106.00289.pdf">
+                                            <papertitle><big>Resource-aware Online Parameter Adaptation for
+                                                    Computationally-constrained Visual-Inertial Navigation Systems</big>
+                                            </papertitle>
+                                        </a>
+                                        <br>
+                                        <strong>Pranay Mathur</strong>,
+                                        <a href="https://no.linkedin.com/in/nkhedekar">Nikhil Khedekar</a>,
+                                        <a href="http://www.kostasalexis.com/">Kostas Alexis</a>,
+                                        <br>
+                                        <em>IEEE-RAS International Conference on Advanced Robotics</em> 2021
+                                        <br>
+                                        <!-- <p>Cite as - M. Srinivasan, A. Dabholkar, S. Coogan and P. A. Vela,
+                                            "Synthesis of Control Barrier Functions Using a Supervised
+                                            Machine Learning Approach" 2020 IEEE/RSJ International
+                                            Conference on Intelligent Robots and Systems (IROS), 2020, pp.
+                                            7139-7145, doi: 10.1109/IROS45743.2020.9341190.</p>
+                                        <br>
+                                        <p>
+                                            <li> Control
+                                                barrier functions (CFB) are mathematical constructs used
+                                                to provide formal safety guarantees.</li>
+                                            <li> This work presented a supervised machine
+                                                learning approach for synthesis of control barrier
+                                                functions, using support vector machine (SVM).</li>
+                                            <li> In this paper CFB is
+                                                used to construct safe trajectory for robot to navigate and
+                                                avoid obstacles</li>
+                                            <li> Experiments were conducted with ROS
+                                                and Simple Two-Dimensional Robot (STDR) Simulator.
+                                                Both offline and online scenarios were tested, in offline
+                                                scenario all obstacles were known, online scenario robot
+                                                starts with zero knowledge of world and synthetic LIDAR
+                                                sensor were used to map obstacles.</li>
+                                            <li> In simulated scenario
+                                                with five obstacles Correlation Coefficients and Frechet
+                                                distances against ground truth were in average 0.98/0.05
+                                                for offline SVM and 0.92/0.09 for online SVM</li>
+                                            <li> The solution was also implemented succesfully for
+                                                slightly non-convex obstacles as well</li>
+                                            <li> Check out <a href="https://youtu.be/4EesPjQq0JU?t=2170"
+                                                    target="_blank">this seminar</a>
+                                                by Dr. Vela for more details about this work.</li>
+                                        </p> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;width:25%;vertical-align:top">
+                                        <div class="one">
+                                            <img src='images/landing.gif' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <a href="https://ieeexplore.ieee.org/abstract/document/9588758">
+                                            <papertitle><big>A Generalized Kalman Filter Augmented Deep-Learning based
+                                                    Approach for Autonomous Landing in MAVs</big></papertitle>
+                                        </a>
+                                        <br>
+                                        <strong>Pranay Mathur</strong>,
+                                        <a href="">Yash Jangir</a>,
+                                        <a href="">Neena Goveas</a>,
+                                        <br>
+                                        <em>IEEE International Symposium of Asian Control Association on Intelligent
+                                            Robotics and Industrial Automation</em> 2021
+                                        <br>
+                                        <!-- <p>Cite as - M. Srinivasan, A. Dabholkar, S. Coogan and P. A. Vela,
+                                            "Synthesis of Control Barrier Functions Using a Supervised
+                                            Machine Learning Approach" 2020 IEEE/RSJ International
+                                            Conference on Intelligent Robots and Systems (IROS), 2020, pp.
+                                            7139-7145, doi: 10.1109/IROS45743.2020.9341190.</p>
+                                        <br>
+                                        <p>
+                                            <li> Control
+                                                barrier functions (CFB) are mathematical constructs used
+                                                to provide formal safety guarantees.</li>
+                                            <li> This work presented a supervised machine
+                                                learning approach for synthesis of control barrier
+                                                functions, using support vector machine (SVM).</li>
+                                            <li> In this paper CFB is
+                                                used to construct safe trajectory for robot to navigate and
+                                                avoid obstacles</li>
+                                            <li> Experiments were conducted with ROS
+                                                and Simple Two-Dimensional Robot (STDR) Simulator.
+                                                Both offline and online scenarios were tested, in offline
+                                                scenario all obstacles were known, online scenario robot
+                                                starts with zero knowledge of world and synthetic LIDAR
+                                                sensor were used to map obstacles.</li>
+                                            <li> In simulated scenario
+                                                with five obstacles Correlation Coefficients and Frechet
+                                                distances against ground truth were in average 0.98/0.05
+                                                for offline SVM and 0.92/0.09 for online SVM</li>
+                                            <li> The solution was also implemented succesfully for
+                                                slightly non-convex obstacles as well</li>
+                                            <li> Check out <a href="https://youtu.be/4EesPjQq0JU?t=2170"
+                                                    target="_blank">this seminar</a>
+                                                by Dr. Vela for more details about this work.</li>
+                                        </p> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;width:25%;vertical-align:top">
+                                        <div class="one">
+                                            <img src='images/icmlas.png' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <a
+                                            href="https://drive.google.com/file/d/1yeTrDFH4CEOG3qhchyjN-uTY5WNSbtDx/view?usp=sharing">
+                                            <papertitle><big>Multi-Sensor Fusion-Based Object Detection Implemented on
+                                                    ROS</big></papertitle>
+                                        </a>
+                                        <br>
+                                        <strong>Pranay Mathur</strong>,
+                                        <a href="">Ravish Kumar</a>,
+                                        <a href="">Rahul Jain</a>,
+                                        <br>
+                                        <em>Springer International Conference on Machine Learning and Autonomous
+                                            Systems</em> 2021
+                                        <br>
+                                        <!-- <p>Cite as - M. Srinivasan, A. Dabholkar, S. Coogan and P. A. Vela,
+                                            "Synthesis of Control Barrier Functions Using a Supervised
+                                            Machine Learning Approach" 2020 IEEE/RSJ International
+                                            Conference on Intelligent Robots and Systems (IROS), 2020, pp.
+                                            7139-7145, doi: 10.1109/IROS45743.2020.9341190.</p>
+                                        <br>
+                                        <p>
+                                            <li> Control
+                                                barrier functions (CFB) are mathematical constructs used
+                                                to provide formal safety guarantees.</li>
+                                            <li> This work presented a supervised machine
+                                                learning approach for synthesis of control barrier
+                                                functions, using support vector machine (SVM).</li>
+                                            <li> In this paper CFB is
+                                                used to construct safe trajectory for robot to navigate and
+                                                avoid obstacles</li>
+                                            <li> Experiments were conducted with ROS
+                                                and Simple Two-Dimensional Robot (STDR) Simulator.
+                                                Both offline and online scenarios were tested, in offline
+                                                scenario all obstacles were known, online scenario robot
+                                                starts with zero knowledge of world and synthetic LIDAR
+                                                sensor were used to map obstacles.</li>
+                                            <li> In simulated scenario
+                                                with five obstacles Correlation Coefficients and Frechet
+                                                distances against ground truth were in average 0.98/0.05
+                                                for offline SVM and 0.92/0.09 for online SVM</li>
+                                            <li> The solution was also implemented succesfully for
+                                                slightly non-convex obstacles as well</li>
+                                            <li> Check out <a href="https://youtu.be/4EesPjQq0JU?t=2170"
+                                                    target="_blank">this seminar</a>
+                                                by Dr. Vela for more details about this work.</li>
+                                        </p> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;width:25%;vertical-align:top">
+                                        <div class="one">
+                                            <img src='images/bci.gif' width="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:75%;vertical-align:top">
+                                        <a href="https://ieeexplore.ieee.org/document/9282898">
+                                            <papertitle><big>BCI Controlled Quadcopter using SVM and Recursive LSE
+                                                    Implemented on ROS</big></papertitle>
+                                        </a>
+                                        <br>
+                                        <a href="">Kshitij Chhabra</a>,
+                                        <strong>Pranay Mathur</strong>,
+                                        <a href="">Veeky Baths</a>,
+                                        <br>
+                                        <em>IEEE International Conference on Systems, Man and Cybernetics</em> 2020
+                                        <br>
+                                        <!-- <p>Cite as - M. Srinivasan, A. Dabholkar, S. Coogan and P. A. Vela,
+                                            "Synthesis of Control Barrier Functions Using a Supervised
+                                            Machine Learning Approach" 2020 IEEE/RSJ International
+                                            Conference on Intelligent Robots and Systems (IROS), 2020, pp.
+                                            7139-7145, doi: 10.1109/IROS45743.2020.9341190.</p>
+                                        <br>
+                                        <p>
+                                            <li> Control
+                                                barrier functions (CFB) are mathematical constructs used
+                                                to provide formal safety guarantees.</li>
+                                            <li> This work presented a supervised machine
+                                                learning approach for synthesis of control barrier
+                                                functions, using support vector machine (SVM).</li>
+                                            <li> In this paper CFB is
+                                                used to construct safe trajectory for robot to navigate and
+                                                avoid obstacles</li>
+                                            <li> Experiments were conducted with ROS
+                                                and Simple Two-Dimensional Robot (STDR) Simulator.
+                                                Both offline and online scenarios were tested, in offline
+                                                scenario all obstacles were known, online scenario robot
+                                                starts with zero knowledge of world and synthetic LIDAR
+                                                sensor were used to map obstacles.</li>
+                                            <li> In simulated scenario
+                                                with five obstacles Correlation Coefficients and Frechet
+                                                distances against ground truth were in average 0.98/0.05
+                                                for offline SVM and 0.92/0.09 for online SVM</li>
+                                            <li> The solution was also implemented succesfully for
+                                                slightly non-convex obstacles as well</li>
+                                            <li> Check out <a href="https://youtu.be/4EesPjQq0JU?t=2170"
+                                                    target="_blank">this seminar</a>
+                                                by Dr. Vela for more details about this work.</li>
+                                        </p> -->
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <hr class="soft">
+
+
+
+                    <!-- Projects -->
+
+                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
+                        class="collapsible" data-toggle="collapse" data-target="#content-projects" id="projects">
+                        <heading>Projects (Limited)</heading>
+                    </button>
+                    <div id="content-projects" class="collapse in">
+
+                        <table
+                            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                            <tbody>
+
+
+
+                                <tr>
+                                    <td style="padding:25px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/drone.jpg' alt="" width="140" height="90">
+                                        </div>
+                                    </td>
+                                    <td style="padding:20px;width:75%;vertical-align:top">
+                                        <papertitle><big>Drone Delivery Using SLAM and Object Avoidance</papertitle>
+                                        </big>
+                                        <br>
+                                        <p>
+                                        <p>
+                                            <a href="https://github.com/Matnay/Autonomous-Drone"
+                                                alt="Github Repo for this project">Code</a>
+                                        </p>
+                                        <li> Developed an algorithm for autonomous navigation of drones in GPS-denied
+                                            environments using RTAB- Map V-SLAM and an RGBD camera</li>
+                                        <li> Developed custom computer vision algorithms using CNN based attention maps
+                                            for obstacle recognition and avoidance implemented in Tensorflow and OpenCV
+                                        </li>
+                                        <li> Selected for funding by the EEE Dept. and Sandbox Fabrication Lab, BITS Goa
+                                        </li>
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <td style="padding:25px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/kratos.jpg' alt="" width="140" height="120">
+                                        </div>
+                                    </td>
+                                    <td style="padding:20px;width:75%;vertical-align:top">
+                                        <papertitle><big>Project Kratos - Mars Rover</papertitle></big>
+                                        <br>
+                                        <p>
+                                            <a href="https://in.linkedin.com/company/kratosbitsgoa"
+                                                alt="Project Webiste for this project">Website</a>
+                                        </p>
+                                        <p>
+                                            <li> Contributed in building a Mars Rover that ranked 10 th of 25 teams in
+                                                the Indian Rover Challenge</li>
+                                            <li> Lead the communication sub-system and implemented a scheduling
+                                                algorithm to transmit
+                                                multiple camera and data feeds with minimal latency</li>
+                                            <li> Set up Communication Networks using the Ubiquiti Networks Platform and
+                                                automated
+                                                processes using BASH scripting in Linux</li>
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+                                <!--
+
+                    <tr>
+                        <td style="padding:25px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <img src='images/GEMM.png' alt="Optimizing Matrix Multiplication on CPUs and GPUs"width="140" height="90">
+                            </div>
+                        </td>
+                        <td style="padding:20px;width:75%;vertical-align:top">
+                            <papertitle><big>Optimizing Matrix Multiplication on CPUs and GPUs</papertitle></big>
+                            <br>
+                            <p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </td>
+                    </tr>
+-->
+                                <!--<tr onmouseout="tl_stop()" onmouseover="tl_start()" >-->
+
+
+                                <tr>
+                                    <td style="padding:20px;width:25%;vertical-align:middle">
+                                        <div class="one">
+                                            <img src='images/RCNN.gif' alt="" width="140" height="100">
+                                        </div>
+                                    </td>
+                                    <td style="padding:10px;width:100%;vertical-align:top">
+                                        <papertitle><big>Autonomous Landing of MAVs using a Kalman Filter and
+                                                Faster-RCNN</papertitle></big>
+                                        <br>
+                                        <p>
+                                            <a href="https://ieeexplore.ieee.org/abstract/document/9588758"
+                                                alt="Paper for this project">Paper</a>
+                                        </p>
+                                        <p>
+                                            <li> Developed an algorithm for autonomous landing of MAVs exploiting
+                                                transfer learning to
+                                                eliminate the need for fiducial markers on landing sites </li>
+                                            <li> Used the Faster-RCNN architecture implemented in Tensorflow along with
+                                                a Kalman Filter based controller deployed using the PX4 stack and mavros
+                                            </li>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr class="soft">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
+                        class="collapsible" data-toggle="collapse" data-target="#content-media" id="media">
+                        <heading>Media and Awards</heading>
+                    </button>
+                    <table border=0 class="bg_colour"
+                        style="padding:10px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <td style="padding:40px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/Mayday Mystery.jpeg' width="240" height="180">
+                                </div>
+                            </td>
+                            <td style="padding:60px;width:50%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/mity.jpg' width="240" height="180">
+                                </div>
+                            </td>
+                            <td style="padding:10px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/sura.jpg' width="180" height="240">
+                                </div>
+                            </td>
+                            <td style="padding:10px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/tech expo BitsScan.jpeg' width="180">
+                                </div>
+                            </td>
+                            <td style="padding:60px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/Derek.jpg' width="220">
+                                </div>
+                            </td>
+                        </tbody>
+                        <tbody>
+                            <td style="padding:40px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/Newspaper.jpeg' width="180">
+                                </div>
+                            </td>
+                            <td style="padding:60px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/newspaperTECHEXPO.jpeg' width="180">
+                                </div>
+                            </td>
+                            <td style="padding:20px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/NewspaperTheGoanTechExpo.jpeg' width="120" height="230">
+                                </div>
+                            </td>
+                            <td style="padding:10px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/DRDO.png' width="160" height="240">
+                                </div>
+                            </td>
+                            <td style="padding:40px;width:25%;vertical-align:middle">
+                                <div class="one">
+                                    <img src='images/Awards/CTE Instructor.jpeg' width="240" height="180">
+                                </div>
+                            </td>
+                        </tbody>
+                    </table>
+                    <br>
+                    <p>Open the images in a new tab to view them in their original resolution</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <br>
+                    <br>
+                    <p>This website is a modification of Jon Barron's <a href="https://jonbarron.info/"
+                            target="_blank">website</a>, Priyal Chhatrapati's <a
+                            href="https://github.com/chpriyal/chpriyal.github.io" target="_blank">website</a> and Amogh
+                        Dabholkar's <a href="https://github.com/AmoghDabholkar/adabholkar.github.io"
+                            target="_blank">website</a>. You can find the source code <a href="https://github.com/Matnay/matnay.github.io"
+                            target="_blank">here</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+    </table>
+
+</body>
+
+</html>
