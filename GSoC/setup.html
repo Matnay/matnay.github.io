@@ -62,7 +62,140 @@
                         </tbody>
                     </table>
 
-                  <h4>Setting up your environment and installing tensorflow a.k.a the need for military level precision in resolving dependency conflicts</h4>
+                    <h4>Setting up your environment and installing tensorflow a.k.a the need for military level
+                        precision in resolving dependency conflicts</h4><br>
+                    <h4><b>Install TensorFlow and Object Detection API on your x86 Linux PC</b></h4>
+                    pip install --ignore-installed --upgrade tensorflow==2.7.0<br>
+                    python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000]))<br><br>
+
+                    <b>Setup Folder Structure</b><br>
+                    mkdir TensorFlow<br>
+                    cd TensorFlow<br><br>
+
+                    <b>Clone and Install the Object Detection API</b><br>
+                    <a href="https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/">Source</a><br>
+                    git clone https://github.com/tensorflow/models<br>
+                    cd TensorFlow/models/research<br><br>
+
+                    <a
+                        href="https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#protobuf-installation-compilation">Install
+                        ProtoBuf</a><br>
+                    protoc object_detection/protos/*.proto --python_out=.<br><br>
+                    git clone https://github.com/cocodataset/cocoapi.git<br>
+                    cd cocoapi/PythonAPI<br>
+                    conda install cython<br>
+                    make<br>
+                    cp -r pycocotools <PATH_TO_TF>/TensorFlow/models/research/<br>
+
+                        cd TensorFlow/models/research/<br>
+                        cp object_detection/packages/tf2/setup.py .<br>
+                        python -m pip install --use-feature=2020-resolver .<br>
+
+                        python object_detection/builders/model_builder_tf2_test.py<br><br>
+
+                        <b>Alternatively:</b><br>
+
+                        <a href="https://docs.anaconda.com/anaconda/install/linux/">Install Anaconda</a><br>
+                        conda create -n tensorflow pip python=3.9<br>
+                        conda activate tensorflow<br>
+
+                        The spec file used to create an identical environment can be found <a
+                            href="../data/GSoC/spec-file.txt">here</a>.<br>
+                        <b>To use the spec file to create an identical environment on the same machine or another
+                            machine:</b><br>
+                        conda create --name myenv --file spec-file.txt<br><br>
+                        <b>To use the spec file to install its listed packages into an existing environment:</b><br>
+                        conda install --name myenv --file spec-file.txt<br><br>
+                        <b>Training the Model and Inferencing</b><br>
+
+                        <b>Convert xml into csv</b><br>
+                        python xml_to_csv.py xml images/ annotations/train_labels.csv<br>
+                        python xml_to_csv.py xml test_images/ annotations/test_labels.csv<br>
+                        <br>
+                        <b>Generate .record files</b><br>
+                        python generate_tfrecord.py -x images/ -l annotations/label_map.pbtxt -o
+                        annotations/train.record<br>
+                        python generate_tfrecord.py -x test_images/ -l annotations/label_map.pbtxt -o
+                        annotations/test.record<br><br>
+
+                        <b>Download model extract and give path in pipeline.config</b><br>
+                        <b>Make an empty folder where trained model checkpoints will be stored</b><br>
+                        <b>Give these folder and pipeline config paths in the command below</b><br><br>
+
+                        <b>Train your model</b><br>
+                        python model_main_tf2.py --model_dir=models/efficientdet_d0_coco17_tpu-32
+                        --pipeline_config_path=/home/pranay.mathur/TensorFlow/workspace/eff_det/models/efficientdet_d0_coco17_tpu-32/pipeline.config<br>
+                        <br>
+                        <b>Export your Model</b><br>
+                        python exporter_main_v2.py --input_type image_tensor --pipeline_config_path
+                        models/efficientdet_d0_coco17_tpu-32/pipeline.config --trained_checkpoint_dir
+                        models/efficientdet_d0_coco17_tpu-32/ --output_directory final_model/<br>
+                        <br>
+                        <b>Perform Inferencing</b><br>
+                        python video_inference.py --model final_model --labels annotations/label_map.pbtxt<br><br><br><br>
+
+                        <hr class="soft">
+
+                        <h4><b>Setting up your Raspberry Pi 4 - Raspberry Pi OS Buster aarch64 </b></h4>
+                        <a
+                            href="https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/raspberry_pi/README.md">Source</a><br>
+                        <br>
+                        <b>Setup and Installation</b><br><br>
+
+                        <b>Create a virtual python3 environment</b><br>
+                        source tflite/bin/activate<br>
+                        python -m venv tflite<br>
+                        pip install gdown<br>
+                        sudo apt-get install libportaudio2<br><br>
+
+
+                        <b>Install TensorFlow Lite for Python</b><br>
+                        python3 -m pip install tflite-runtime<br><br>
+
+                        <b>Clone the Tensorflow examples repository and install tflite</b><br>
+                        git clone https://github.com/tensorflow/examples --depth 1<br>
+                        cd examples/lite/examples/object_detection/raspberry_pi<br><br>
+
+                        <b>The script install the required dependencies and download the TFLite models.</b><br>
+                        sh setup.sh<br><br>
+
+                        <b>Perform inference on the Raspberry Pi 4</b><br>
+                        <b>Download the test video</b><br>
+                        gdown 1O8sTOCbTI0bmJTaZhbOr40dgPJSWVNYz<br><br>
+
+                        <b>Download the quantized model</b><br>
+                        gdown 1-3ZxeGXyJhshmpE7Vrc8jxo_zkE0GKCB<br>
+                        <b>To test on our output video replace line 44 with:</b><br>
+                        cap = cv2.VideoCapture("output.avi")<br><br>
+
+                        <b>Perform inference</b><br>
+                        python3 detect.py --model cone_detection.tflite<br><br>
+
+                        <b>Perform inference with EdgeTPU</b><br>
+                        **The following 4 commands are not necessary of you only want to run a pre-trained model**<br>
+                        curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -<br>
+                        echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee
+                        /etc/apt/sources.list.d/coral-edgetpu.list<br>
+                        sudo apt-get update<br>
+                        sudo apt-get install edgetpu-compiler<br><br>
+                        
+                        <b>Install PyCoral</b><br>
+                        python3 -m pip install --extra-index-url https://google-coral.github.io/py-repo/ pycoral~=2.0<br>
+                        git clone https://github.com/google-coral/pycoral<br>
+                        cd pycoral/examples/<br><br>
+                        
+                        <b>Run Example</b><br>
+                        python3 detect_image.py \<br>
+                        --model cone_detection_edgetpu.tflite \<br>
+                        --labels cone_labels.txt \<br>
+                        --input image.jpg \<br>
+                        --output result.jpg<br>
+                        
+                        <b>Perform Inference on the Video or Live feed</b><br>
+                        python3 detect.py --model cone_detection.tflite --enableEdgeTPU<br>
+                        <hr class="soft">
+
+
             <tr>
                 <td>
                     <br>
