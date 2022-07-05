@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <title>GSoC'22@CROSS</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta name="author" content="Pranay Mathur">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
+    <link rel="icon" type="image/jpg" href="../images/gsoc.png">
+</head>
+
+<body class="bg_colour">
+    <table border=0 class="bg_colour"
+        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr style="padding:0px">
+                <td style="padding:0px">
+
+                    <!-- Name tab -->
+                    <table border=0 class="bg_colour"
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:20%;max-width:20%">
+                                    <a href="../images/Pranay.png"><img style="width:100%;max-width:100%"
+                                            alt="profile photo" src="../images/cross.jpeg" class="img-circle"></a>
+                                </td>
+                                <td style="padding:2.5%;width:60%;vertical-align:middle">
+                                    <p style="text-align:center">
+                                    <h2>EfficientDet: Balancing Efficiency with accuracy</h2>
+                                    </p>
+
+                                    <p style="text-align:center">
+                                        <a
+                                            href="https://github.com/uccross/open-source-autonomous-vehicle-controller">Code</a>
+                                        &nbsp|&nbsp
+                                        <a
+                                            href="https://drive.google.com/drive/folders/1A3o8T2bHrwRLA4A5kCp0XCPeP-5Zgykv?usp=sharing">Dataset</a>
+                                        &nbsp|&nbsp
+                                        <a
+                                            href="https://colab.research.google.com/drive/1khnEcixUAWvRWJTOBOMsbWeHo6Y26i2U?usp=sharing">Notebook</a>
+                                        &nbsp|&nbsp
+                                        <a
+                                            href="https://summerofcode.withgoogle.com/programs/2022/projects/OoWwS8eP">Project</a>
+                                        &nbsp|&nbsp
+                                        <a href="https://matnay.github.io">About Me</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4><b>Why we chose the EfficientDet family of models and which tcompound coefficient ϕ you should
+                            choose</b></h4>
+                    <h4>The aim of our object detector is to be as accurate as possible along with running in real-time.
+                        Traditionally, there has been an associated trade-off between either metric, either the accuracy
+                        or the speed. The EfficientDet family aims to build a scalable detection architecture with high
+                        accuracy and a reasonable computational footprint across a wide spectrum of resource constraints
+                        ranging from 3B to 300B FLOPS.<br><br>
+                        There are three major contributions of this paper:<br>
+                        <b>BiFPN:</b> A weighted bidirectional feature network for easy and fast multi-scale feature
+                        fusion.
+                        <b>Compound scaling:</b> A new method, which jointly scales up backbone, feature network,
+                        box/class
+                        network, and resolution<br>
+                        <b>EfficientDet:</b> A new family of detectors with significantly better accuracy and efficiency
+                        across a wide spectrum of resource constraints.<br>
+
+                        The model addresses the problem of efficient multi-scale feature fusion. Feature Pyramid
+                        Networks(FPN) are used for efficient multi-scale feature fusion. Not all features contribute
+                        equally to the output features and hence, EfficientDet detectors propose a new strategy for
+                        multi-scale feature fusion.<br>
+                        Additionally, model scaling is a well-known strategy to improve accuracy in object detection
+                        models by increasing the size of the backbone. Similar to compund scaling in EfficientNets
+                        EfficientDets propose a compound scaling coefficient that jointly scales up the resolution,
+                        depth, width for the backbone, feature network and box/class prediction network.<br>
+                        FPNs were introduced for to detect objects at multiple scales but these are computationally
+                        expensive. CNNs on the other hand, form an inherent heirarchial pyramid structure but lack the
+                        representational capacity due to low semantic features in high-resolution maps. FPNs overcome
+                        this by using a bottom-up and top-down pathway. High-level features are upsampled first and then
+                        combined with low-level features using a lateral connection.
+                        The BiFPN architecture learns weights while fusing feature maps of different scales using either
+                        unbounded fusion, softmax-based fusion and Fast-Normalized fusion. The backbone networks are
+                        ImageNet pretrained
+                        EfficientNets. The authors proposed a new compound scaling method for object detection, which
+                        uses a simple
+                        compound coefficient ϕ to jointly scale-up all dimensions of the backbone network, BiFPN
+                        network, class/box network, and resolution.
+                    </h4>
+                    Click <a
+                        href="https://medium.com/@nainaakash012/efficientdet-scalable-and-efficient-object-detection-ea05ccd28427">here</a>
+                    to view an excellent blog with more details written, on the paper and click <a
+                        href="https://arxiv.org/abs/1911.09070">here</a> to view the paper itself.
+            <tr>
+                <td>
+                    <br>
+                    <br>
+                    <a href="GSoC22.html">Back to Main</a>
+                    <p style="text-align:center">
+                        &nbsp~&nbsp
+                        <a href="mailto:matnay17@gmail.com" target="_blank">Email</a> &nbsp|&nbsp
+                        <a href="data/CV_PranayMathur.pdf" target="_blank">CV</a> &nbsp|&nbsp
+                        <a href="https://github.com/Matnay" target="_blank">Github</a> &nbsp|&nbsp
+                        <a href="https://www.linkedin.com/in/pranay-mathur1998/" target="_blank">LinkedIn</a>
+                        <!-- <a href="https://twitter.com/" target="_blank">Twitter</a> -->
+                        &nbsp~&nbsp
+                    </p>
+    </table>
+
+</body>
+
+</html>
