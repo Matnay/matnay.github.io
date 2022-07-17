@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <title>GSoC'22@CROSS</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta name="author" content="Pranay Mathur">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
+    <link rel="icon" type="image/jpg" href="../images/gsoc.png">
+</head>
+
+<body class="bg_colour">
+    <table border=0 class="bg_colour"
+        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr style="padding:0px">
+                <td style="padding:0px">
+
+                    <!-- Name tab -->
+                    <table border=0 class="bg_colour"
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:20%;max-width:20%">
+                                    <a href="../images/Pranay.png"><img style="width:100%;max-width:100%"
+                                            alt="profile photo" src="../images/cross.jpeg" class="img-circle"></a>
+                                </td>
+                                <td style="padding:2.5%;width:60%;vertical-align:middle">
+                                    <p style="text-align:center">
+                                    <h2>An analysis of the tradeoff - Inference Time vs. Accuracy</h2>
+                                    </p>
+
+                                    <p style="text-align:center">
+                                        <a
+                                            href="https://github.com/uccross/open-source-autonomous-vehicle-controller">Code</a>
+                                        &nbsp|&nbsp
+                                        <a
+                                            href="https://drive.google.com/drive/folders/1A3o8T2bHrwRLA4A5kCp0XCPeP-5Zgykv?usp=sharing">Dataset</a>
+                                        &nbsp|&nbsp
+                                        <a
+                                            href="https://colab.research.google.com/drive/1khnEcixUAWvRWJTOBOMsbWeHo6Y26i2U?usp=sharing">Notebook</a>
+                                        &nbsp|&nbsp
+                                        <a
+                                            href="https://summerofcode.withgoogle.com/programs/2022/projects/OoWwS8eP">Project</a>
+                                        &nbsp|&nbsp
+                                        <a href="https://matnay.github.io">About Me</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4><b>How to determine which EfficientDet model is best suited to run with limited computational
+                        resources and specified accuracy constraints</b></h4>
+                    <h4>
+                        An attempt at theoretical understanding of the EfficientDet family of models has been attempted
+                        in <a href="effdet.html">this blog</a>. We limit the discussion here to empirical observations
+                        and practical considerations.<br>
+                        "The Edge TPU has approximately 8 MB of SRAM for caching model paramaters, so any model close to
+                        or over 8 MB will not fit onto the Edge TPU memory. That means the inference times are longer,
+                        because some model parameters must be fetched from the host system memory" - Official
+                        Documentation states that EfficientDet lite2 and lite3 models are such models and will lead to
+                        greater latency. Additionally, there is an aspect of the EfficientDet architecture in which a
+                        certain layer cannot compile for the Edge TPU when it carries more than 20 classes. Due to these
+                        considerations we compare only the EfficientDet-Lite0 and EfficientDet-Lite1 model and their
+                        quantized .tflite formats.
+                    </h4>
+                    Our findings are summarized below:<br>
+                    <table border="1">
+                        <tr>
+                            <td><b></td>
+                            <td><b>AP</td>
+                            <td><b>AP50</td>
+                            <td><b>AP75</td>
+                            <td><b>AP_/black</td>
+                            <td><b>AP_/blue</td>
+                            <td><b>AP_/green</td>
+                            <td><b>AP_/orange</td>
+                            <td><b>AP_/pedestrian</td>
+                            <td><b>AP_/yellow</td>
+                            <td><b>APl</td>
+                            <td><b>APm</td>
+                            <td><b>APs</td>
+                            <td><b>ARl</td>
+                            <td><b>ARm</td>
+                            <td><b>ARmax1</td>
+                            <td><b>ARmax10</td>
+                            <td><b>ARmax100</td>
+                            <td><b>ARs</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>EfficientDet0 <br>Intel core i3-4010u CPU 1.7GHz x 4</td>
+                            <td>0.60336643</td>
+                            <td>0.78846604</td>
+                            <td>0.7416517</td>
+                            <td>-1.0</td>
+                            <td>0.8254125</td>
+                            <td>0.86059403</td>
+                            <td>0.2607493</td>
+                            <td>0.4039604</td>
+                            <td>0.666116</td>
+                            <td>0.6510341</td>
+                            <td>0.6805312</td>
+                            <td>0.055618312</td>
+                            <td>0.7214286</td>
+                            <td>0.73108107</td>
+                            <td>0.5627712</td>
+                            <td>0.6478946</td>
+                            <td>0.65534663</td>
+                            <td>0.0825</td>
+                        </tr>
+                        <tr>
+                            <td><b>EfficientDet-Lite0 <br>Intel core i3-4010u CPU 1.7GHz x 4</td>
+                            <td> 0.5824297</td>
+                            <td> 0.7955279</td>
+                            <td> 0.7390616</td>
+                            <td> -1.0</td>
+                            <td> 0.7915841</td>
+                            <td> 0.8504950</td>
+                            <td> 0.2758685</td>
+                            <td> 0.3534653</td>
+                            <td> 0.6407355</td>
+                            <td> 0.631306 </td>
+                            <td> 0.6523127</td>
+                            <td> 0.0584158</td>
+                            <td> 0.6866666</td>
+                            <td> 0.6686186</td>
+                            <td> 0.5425755</td>
+                            <td> 0.6043168</td>
+                            <td> 0.6062886</td>
+                            <td> 0.055</td>
+                        </tr>
+                        <tr>
+                            <td><b>EfficientDet-1 <br>Intel core i3-4010u CPU 1.7GHz x 4</td>
+                            <td> 0.54346114</td>
+                            <td> 0.69820446</td>
+                            <td> 0.6316695</td>
+                            <td> -1.0</td>
+                            <td> 0.8054515</td>
+                            <td> 0.48415843</td>
+                            <td> 0.26630923</td>
+                            <td> 0.42079207</td>
+                            <td> 0.7405946</td>
+                            <td> 0.6333985</td>
+                            <td> 0.6379106</td>
+                            <td> 0.055603962</td>
+                            <td> 0.73761904</td>
+                            <td> 0.75453454</td>
+                            <td> 0.5518218</td>
+                            <td> 0.65186393</td>
+                            <td> 0.66007316</td>
+                            <td> 0.065</td>
+                        </tr>
+                        <tr>
+                            <td><b>EfficientDet-Lite1 <br>Intel core i3-4010u CPU 1.7GHz x 4</td>
+                            <td> 0.5420794</td>
+                            <td> 0.6939186</td>
+                            <td> 0.60775334</td>
+                            <td> -1.0</td>
+                            <td> 0.7853253</td>
+                            <td> 0.45445544</td>
+                            <td> 0.2817099</td>
+                            <td> 0.45445544</td>
+                            <td> 0.73445094</td>
+                            <td> 0.6172953</td>
+                            <td> 0.64930636</td>
+                            <td> 0.055445544</td>
+                            <td> 0.6838095</td>
+                            <td> 0.67096096</td>
+                            <td> 0.49844155</td>
+                            <td> 0.57728916</td>
+                            <td> 0.57757086</td>
+                            <td> 0.0525</td>
+                        </tr>
+                    </table>
+
+                    <h3>EfficientDet-0</h3>
+                    <img src="../images/GSoC/effdet0_laptop.png">
+                    <img src="../images/GSoC/effdet0_laptop_2.png"><br>
+                    AP: 0.60336643<br>
+                    AP50: 0.78846604<br>
+                    AP75: 0.7416517<br>
+                    AP_/black: -1.0<br>
+                    AP_/blue: 0.8254125<br>
+                    AP_/green: 0.86059403<br>
+                    AP_/orange: 0.2607493<br>
+                    AP_/pedestrian: 0.4039604<br>
+                    AP_/yellow: 0.666116<br>
+                    APl: 0.6510341<br>
+                    APm: 0.6805312<br>
+                    APs: 0.055618312<br>
+                    ARl: 0.7214286<br>
+                    ARm: 0.73108107<br>
+                    ARmax1: 0.5627712<br>
+                    ARmax10: 0.6478946<br>
+                    ARmax100: 0.65534663<br>
+                    ARs: 0.0825<br><br>
+
+                    HP-15-r013tx Laptop<br>
+                    Intel Core i3-4010U CPU @ 1.70GHz x 4<br>
+                    FPS: 2<br>
+                    Average Inference Speed: 500 ms<br>
+
+                    <h3>EfficientDet-Lite0</h3>
+                    <img src="../images/GSoC/effdetlite0_laptop.png">
+                    <img src="../images/GSoC/effdetlite0_laptop_2.png"><br>
+                    AP: 0.5824297<br>
+                    AP50: 0.7955279<br>
+                    AP75: 0.73906165<br>
+                    AP_/black: -1.0<br>
+                    AP_/blue: 0.79158413<br>
+                    AP_/green: 0.85049504<br>
+                    AP_/orange: 0.27586856<br>
+                    AP_/pedestrian: 0.35346535<br>
+                    AP_/yellow: 0.6407355<br>
+                    APl: 0.631306<br>
+                    APm: 0.6523127<br>
+                    APs: 0.05841584<br>
+                    ARl: 0.68666667<br>
+                    ARm: 0.6686186<br>
+                    ARmax1: 0.5425755<br>
+                    ARmax10: 0.60431683<br>
+                    ARmax100: 0.6062886<br>
+                    ARs: 0.055<br><br>
+
+                    HP-15-r013tx Laptop<br>
+                    Intel Core i3-4010U CPU @ 1.70GHz x 4<br>
+                    FPS: 2.6<br>
+                    Average Inference Speed: 384 ms<br><br>
+
+                    RaspberryPi 4<br>
+                    ARM Cortex A72 @ 1.5 GHz x 4<br>
+                    FPS: 1.7<br>
+                    Average Inference Speed: 588 ms<br><br>
+
+                    RaspberryPi 4 accelerated with the Coral Edge TPU<br>
+                    ARM Cortex A72 @ 1.5 GHz x 4 and Coral Edge TPU ASIC with 4 TOPS capability<br>
+                    FPS: 8.4<br>
+                    Average Inference Speed: 119.04 ms<br><br>
+
+                    <h3>EfficientDet-1</h3>
+                    <!--<img src="../images/GSoC/effdetlite1_laptop.png">
+                    <img src="../images/GSoC/effdetlite1_laptop_2.png"><br>-->
+                    AP: 0.54346114<br>
+                    AP50: 0.69820446<br>
+                    AP75: 0.6316695<br>
+                    AP_/black: -1.0<br>
+                    AP_/blue: 0.8054515<br>
+                    AP_/green: 0.48415843<br>
+                    AP_/orange: 0.26630923<br>
+                    AP_/pedestrian: 0.42079207<br>
+                    AP_/yellow: 0.7405946<br>
+                    APl: 0.6333985<br>
+                    APm: 0.6379106<br>
+                    APs: 0.055603962<br>
+                    ARl: 0.73761904<br>
+                    ARm: 0.75453454<br>
+                    ARmax1: 0.5518218<br>
+                    ARmax10: 0.65186393<br>
+                    ARmax100: 0.66007316<br>
+                    ARs: 0.065<br><br>
+
+                    HP-15-r013tx Laptop<br>
+                    Intel Core i3-4010U CPU @ 1.70GHz x 4<br>
+                    FPS: 1<br>
+                    Average Inference Speed: 1000 ms<br><br>
+
+                    <h3>EfficientDet-Lite1</h3>
+                    <img src="../images/GSoC/effdetlite1_laptop.png">
+                    <img src="../images/GSoC/effdetlite1_laptop_2.png"><br>
+                    AP: 0.5420794<br>
+                    AP50: 0.6939186<br>
+                    AP75: 0.60775334<br>
+                    AP_/black: -1.0<br>
+                    AP_/blue: 0.7853253<br>
+                    AP_/green: 0.45445544<br>
+                    AP_/orange: 0.2817099<br>
+                    AP_/pedestrian: 0.45445544<br>
+                    AP_/yellow: 0.73445094<br>
+                    APl: 0.6172953<br>
+                    APm: 0.64930636<br>
+                    APs: 0.055445544<br>
+                    ARl: 0.6838095<br>
+                    ARm: 0.67096096<br>
+                    ARmax1: 0.49844155<br>
+                    ARmax10: 0.57728916<br>
+                    ARmax100: 0.57757086<br>
+                    ARs: 0.0525<br><br>
+
+                    HP-15-r013tx Laptop<br>
+                    Intel Core i3-4010U CPU @ 1.70GHz x 4<br>
+                    FPS: 1.7<br>
+                    Average Inference Speed: 384 ms<br><br>
+
+                    RaspberryPi 4<br>
+                    ARM Cortex A72 @ 1.5 GHz x 4<br>
+                    FPS: 1.7<br>
+                    Average Inference Speed: 588 ms<br><br>
+
+                    RaspberryPi 4 accelerated with the Coral Edge TPU<br>
+                    ARM Cortex A72 @ 1.5 GHz x 4 and Coral Edge TPU ASIC with 4 TOPS capability<br>
+                    FPS: 8.4<br>
+                    Average Inference Speed: 119.04 ms<br><br>
+
+                    Click <a
+                        href="https://medium.com/@nainaakash012/efficientdet-scalable-and-efficient-object-detection-ea05ccd28427">here</a>
+                    to view an excellent blog with more details written, on the paper and click <a
+                        href="https://arxiv.org/abs/1911.09070">here</a> to view the paper itself.
+            <tr>
+                <td>
+                    <br>
+                    <br>
+                    <a href="GSoC22.html">Back to Main</a>
+                    <p style="text-align:center">
+                        &nbsp~&nbsp
+                        <a href="mailto:matnay17@gmail.com" target="_blank">Email</a> &nbsp|&nbsp
+                        <a href="data/CV_PranayMathur.pdf" target="_blank">CV</a> &nbsp|&nbsp
+                        <a href="https://github.com/Matnay" target="_blank">Github</a> &nbsp|&nbsp
+                        <a href="https://www.linkedin.com/in/pranay-mathur1998/" target="_blank">LinkedIn</a>
+                        <!-- <a href="https://twitter.com/" target="_blank">Twitter</a> -->
+                        &nbsp~&nbsp
+                    </p>
+    </table>
+
+</body>
+
+</html>
